@@ -1,11 +1,11 @@
-export class CategoriaUsuario { //teste
+export class CategoriaUsuario { 
 
     id: number;
     nome: string;
 
-    constructor(id: number, nome: string){ //comentário para teste
+    constructor(id: number, nome: string){ 
         this.id = id;
-        this.nome = nome; //nome
+        this.nome = nome; 
 
     }
 }
