@@ -1,7 +1,7 @@
 import { Livro } from "./Livro";
 
 export class Estoque {
-    id: number;
+    id: number; //código único de exemplar 
     livro: Livro;
     quantidade: number;
     quantidadeEmprestada: number;
@@ -34,6 +34,6 @@ export class Estoque {
     }
 
     private atualizarDisponibilidade(): void {
-        this.disponivel = (this.quantidade - this.quantidadeEmprestada) > 0;
+        this.disponivel = (this.quantidade - this.quantidadeEmprestada) > 0; //hehe
     }
 }
