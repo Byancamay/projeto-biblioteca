@@ -1,4 +1,4 @@
-import { CategoriaLivro } from "./CategoriaLivro"; 
+import { CategoriaLivro } from "./CategoriaLivro"; //teste
 
 export class Livro {
     id: number;
