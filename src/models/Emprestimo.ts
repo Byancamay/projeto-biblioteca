@@ -6,7 +6,7 @@ export class Emprestimo {
     usuario: Usuario;
     exemplar: Estoque;
     dataEmprestimo: Date;
-    dataDevolucaoPrevista: Date; 
+    dataDevolucaoPrevista: Date; //calcula automaticamente
     dataEntrega: Date | null;
     diasAtraso: number;
     suspensaoAoDebito: Date | null; 
