@@ -6,7 +6,7 @@ export class CursoRepository {
     private nextId: number = 1;
 
     private constructor() {
-        this.add(new Curso(this.generateId(), "Análise e desenvolvimento de Sistemas"));
+        this.add(new Curso(this.generateId(), "Análise e Desenvolvimento de Sistemas"));
         this.add(new Curso(this.generateId(), "Pedagogia"));
         this.add(new Curso(this.generateId(), "Administração"));
         this.add(new Curso(this.generateId(), "Engenharia de Produção"));
