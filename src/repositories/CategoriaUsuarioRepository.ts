@@ -1,4 +1,4 @@
-import { CategoriaUsuario } from "../models/CategoriaUsuario";
+import { CategoriaUsuario } from "../models/CategoriaUsuario"; 
 
 export class CategoriaUsuarioRepository {
     private static instance: CategoriaUsuarioRepository;
