@@ -9,6 +9,7 @@ export class Usuario {
     categoria: CategoriaUsuario;
     curso: Curso;
     dataSuspensaoAte: Date | null; 
+    email: string;
 
     constructor(
         id: number,
