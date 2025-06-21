@@ -89,7 +89,7 @@ export class UsuarioService {
         return this.usuarioRepository.delete(usuario.id);
     }
 
-    verificarESuspenderusuario(usuario: Usuario): void {
+    verificarESuspenderUsuario(usuario: Usuario): void {
         const emprestimoAtrasados = this.emprestimoRepository.findAll().filter(e => e.usuario.id === usuario.id && e.dataEntrega === null && e.dataDevolucaoPrevista < new Date());
 
         if (emprestimoAtrasados.length > 0) {
