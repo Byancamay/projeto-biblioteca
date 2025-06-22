@@ -60,7 +60,7 @@ export class UsuarioService {
         return this.usuarioRepository.findByCpf(cpf);
     }
 
-    atualizarUsuario(cpf: string, dadosAtualizacao: { nome?: string; email?: string; ativo?: boolean; dataSuspensaoAte?: Date | null }): Usuario {
+    atualizarUsuario(cpf: string, dadosAtualizacao: any ): Usuario {
         const usuario = this.usuarioRepository.findByCpf(cpf);
         if (!usuario) {
             throw new Error("Usuário não encontrado.");

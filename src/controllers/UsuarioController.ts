@@ -49,6 +49,17 @@ export class UsuarioController {
         }
     }
 
+    static atualizarUsuario(req: Request, res: Response): void {
+        try {
+            const { cpf } = req.params;
+            const dadosAtualizacao = req.body;
+            const usuarioAtualizado = usuarioService.atualizarUsuario(cpf, dadosAtualizacao);
+            res.status(200).json({ status: "sucess", data: usuarioAtualizado });
+        } catch (error: any) {
+            res.status(400).json({ status: "error", message: error.message });
+        }
+    }
+
     static excluirUsuario(req: Request,res: Response): void {
         try {
             const { cpf } = req.params;
