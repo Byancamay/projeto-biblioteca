@@ -2,28 +2,18 @@ import { CategoriaUsuario } from "./CategoriaUsuario";
 import { Curso } from "./Curso";
 
 export class Usuario {
-    id: number;
-    nome: string;
-    cpf: string;
-    ativo: boolean;
-    categoria: CategoriaUsuario;
-    curso: Curso;
-    dataSuspensaoAte: Date | null; 
-    email: string;
+    public ativo: boolean; 
+    public dataSuspensaoAte: Date | null; 
 
     constructor(
-        id: number,
-        nome: string,
-        cpf: string,
-        categoria: CategoriaUsuario,
-        curso: Curso
+        public id: number,
+        public nome: string,
+        public cpf: string,
+        public email: string, 
+        public categoria: CategoriaUsuario,
+        public curso: Curso
     ) {
-        this.id = id;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.ativo = true;
-        this.categoria = categoria;
-        this.curso = curso;
+        this.ativo = true; 
         this.dataSuspensaoAte = null;
     }
 
@@ -31,8 +21,8 @@ export class Usuario {
         const hoje = new Date();
         hoje.setDate(hoje.getDate() + dias);
         this.dataSuspensaoAte = hoje;
-        if (dias > 60) { 
-            this.ativo = false; 
+        if (dias > 60) {
+            this.ativo = false;
         }
     }
 

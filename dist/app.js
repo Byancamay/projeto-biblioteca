@@ -1,0 +1,38 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const UsuarioController_1 = require("./controllers/UsuarioController");
+const LivroController_1 = require("./controllers/LivroController");
+const EstoqueController_1 = require("./controllers/EstoqueController");
+const EmprestimoController_1 = require("./controllers/EmprestimoController");
+const CatalogController_1 = require("./controllers/CatalogController");
+const app = (0, express_1.default)();
+const PORT = process.env.PORT ?? 3090;
+app.use(express_1.default.json());
+app.post("/library/usuarios", UsuarioController_1.UsuarioController.cadastrarUsuario);
+app.get("/library/usuarios", UsuarioController_1.UsuarioController.listarUsuarios);
+app.get("/library/usuarios/:cpf", UsuarioController_1.UsuarioController.buscarUsuarioPorCpf);
+app.put("/library/usuarios/:cpf", UsuarioController_1.UsuarioController.atualizarUsuario);
+app.delete("/library/usuarios/:cpf", UsuarioController_1.UsuarioController.excluirUsuario);
+app.post("/library/livros", LivroController_1.LivroController.adicionarLivro);
+app.get("/library/livros", LivroController_1.LivroController.listarLivros);
+app.get("library/livros/isbn", LivroController_1.LivroController.buscarLivroPorIsbn);
+app.put("/library/livros/:isbn", LivroController_1.LivroController.atualizarLivro);
+app.delete("/library/livros/:isbn", LivroController_1.LivroController.excluirLivro);
+app.post("/library/estoque", EstoqueController_1.EstoqueController.cadastrarExemplar);
+app.get("/library/estoque", EstoqueController_1.EstoqueController.listarExemplares);
+app.get("/library/estoque/:codigo", EstoqueController_1.EstoqueController.buscarExemplarPorCodigo);
+app.put("/library/estoque/:codigo", EstoqueController_1.EstoqueController.atualizarExemplar);
+app.delete("library/estoque/:codigo", EstoqueController_1.EstoqueController.excluirExemplar);
+app.post("libraryemprestimos", EmprestimoController_1.EmprestimoController.realizarEmprestimo);
+app.get("/library/emprestimos", EmprestimoController_1.EmprestimoController.listarEmprestimo);
+app.put("library/emprestimos/:id/devolucao", EmprestimoController_1.EmprestimoController.registrarDevolucao);
+app.get("/library/catalogos/categorias-usuario", CatalogController_1.CatalogController.listarCategoriasLivro);
+app.get("/library/catalogos/categorias-livro", CatalogController_1.CatalogController.listarCategoriasLivro);
+app.get("/library/catalogos/cursos", CatalogController_1.CatalogController.listarCursos);
+app.listen(PORT, () => {
+    console.log(`API de Gestão de Biblioteca em execução no URL: http://localhost:${PORT}/library`);
+});
