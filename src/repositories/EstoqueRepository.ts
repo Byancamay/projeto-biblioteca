@@ -1,4 +1,3 @@
-import { escape } from "querystring";
 import { Estoque } from "../models/Estoque";
 
 export class EstoqueRepository {
