@@ -1,5 +1,4 @@
 export class CategoriaUsuario { 
-
     id: number;
     nome: string;
 

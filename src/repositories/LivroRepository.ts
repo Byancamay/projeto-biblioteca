@@ -1,4 +1,3 @@
-import { fileURLToPath } from "url";
 import { Livro } from "../models/Livro";
 
 export class LivroRepository {
