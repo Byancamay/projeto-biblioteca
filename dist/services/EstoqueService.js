@@ -70,7 +70,6 @@ class EstoqueService {
         if (!exemplar) {
             throw new Error("Exemplar não encontrado.");
         }
-        // Não pode remover exemplar se estiver emprestado
         if (exemplar.quantidadeEmprestada > 0) {
             throw new Error("Não é possível remover o exemplar: ele está emprestado.");
         }

@@ -44,14 +44,14 @@ export class EmprestimoService {
         let limiteLivros: number;
         let diasEmprestimo: number;
 
-        if (usuario.categoria.nome === "Professor") {
+        if (usuario.categoria.nome === "Professor") { //5 livros por 40 dias
             limiteLivros = 5;
             diasEmprestimo = 40; 
-        } else if (usuario.categoria.nome === "Aluno") {
+        } else if (usuario.categoria.nome === "Aluno") { //3 livros por 15 dias
             limiteLivros = 3;
             diasEmprestimo = 15; 
 
-            if (exemplar.livro.categoria.nome === usuario.curso.nome) {
+            if (exemplar.livro.categoria.nome === usuario.curso.nome) { //30 se for livro da áreea do curso
                 diasEmprestimo = 30;
             }
         } else {
